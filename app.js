@@ -8,7 +8,7 @@ var MongoStore = require('connect-mongo')(session);
 app.use('/static', express.static('public'));
 // connect to a database
 // mongodb://<user>:<password>@<host>/<database>
-mongoose.connect('mongodb+srv://asd52052:asd52052@cluster0.s714v.azure.mongodb.net/304cem');
+mongoose.connect('mongodb+srv://asd52052:asd52052@cluster0.s714v.azure.mongodb.net/304cem', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
