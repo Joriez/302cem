@@ -51,7 +51,7 @@ app.use(function (err, req, res, next) {
   res.send(err.message);
 });
 
-// listen on port 3210
+// listen on port 3200
 app.listen(3000, function () {
   console.log('Listening on port 3000...');
 });

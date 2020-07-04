@@ -102,34 +102,19 @@ router.get("/username", function (req, res, next) {
 
 })
 
-
-
-
-// GET route to redirect to '/profile' page after registering
-router.get('/main', function (req, res, next) {
-    User.findById(req.session.userId)
-        .exec(function (error, user) {
-            if (error) {
-                return next(error);
-            } else {
-                if (user === null) {
-                    var err = new Error('Not authorized! Go back!');
-                    err.status = 400;
-                    try {
-                        res.render(path.join(__dirname, '../views/main.ejs'), { name: username });
-                    } catch (e) {
-
-                    }
-                } else {
-
-                    username = user.username;
-
-                    res.render(path.join(__dirname, '../views/main.ejs'), { name: username });
-
-                }
-            }
-        });
-});
+router.get('/login', function (req, res, next){
+    res.sendFile(path.join(__dirname , '../views/login22.html'));
+  })
+  
+router.get('/register', function (req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/register22.html'));
+})
+router.get('/forgetpassword', function (req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/forget22.html'));
+})
+router.get('/memberindex', function (req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/memberindex.html'));
+})
 
 
 // GET for logout

@@ -1,50 +1,19 @@
-$.ajax({
-    url: "http://localhost:3000/all_item",
-    dataType: 'json',
-    type: 'get',
-    cache:false,
-    success: function(data){
-        console.log(data);
-        for (i = 0; i<data.length; i++){
-            
-            $(".flex-container").append(
-                
-                '<li class="flex-item">' + 
-                data[i].name + '<br>' + '<br>' +
-                '<img src="../static/image/' + data[i].image + '" width="300" height="220">' + '<br>' +
-                '<form action="/one_item" method="POST"> ' +
-                '<input type="hidden" value="' + data[i]._id + '"' + ' name = "product_id" >' + 
-                '<input type="hidden" value="' + data[i].username + '"' + ' name = "created_by" >' + 
-                '<input type="hidden" value="' + data[i].image + '"' + ' name = "product_image" >' + 
-                '<input type="hidden" value="' + data[i].name + '"' + ' name = "product_name" >' + 
-                '<input type="hidden" value="' + data[i].description + '"' + ' name = "description" >' + 
-                '<input type="hidden" value="' + data[i].price + '"' + ' name = "price" >' + 
-                '<input type="hidden" value="' + data[i].location + '"' + ' name = "location" >' + 
-                '<input type="hidden" value="' + data[i].phone + '"' + ' name = "phone" >' + 
-                '<br>' +
-                '<button type="submit" class="btn btn-primary">More Detail</button>' + '<br>' + 
-                '</form>' +
-                '</li>'
-            );
-        }
+"use strict"
 
-    }
-})
-
-$(function(){
-
-    $('input[type="text"]').keyup(function(){
-
-        var search = $(this).val();
-
-        $("li").each(function(){
-
-            var Thetext = $(this).text(),
-                show = Thetext.indexOf(search) !== -1;
-
-            $(this).toggle(show);
-
-        });     
+$(window).on("load", function() {
+    $('.btn-forget').on('click',function(e){
+        e.preventDefault();
+       $('.form-items','.form-content').addClass('hide-it');
+       $('.form-sent','.form-content').addClass('show-it');
     });
-
+    $('.btn-tab-next').on('click',function(e){
+        e.preventDefault();
+        $('.nav-tabs .nav-item > .active').parent().next('li').find('a').trigger('click');
+    });
 });
+
+
+$("#login").click(function(){
+    console.log("123")
+    window.location.href="/login"
+})

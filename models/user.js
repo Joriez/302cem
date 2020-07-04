@@ -18,10 +18,7 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  passwordConf: {
-    type: String,
-    required: true,
-  }
+
 });
 
 // Authenticate input on database
@@ -55,13 +52,7 @@ UserSchema.pre('save', function (next) {
     user.password = hash;
     next();
   })
-  bcrypt.hash(user.passwordConf, 10, function (err, hash) {
-    if (err) {
-      return next(err);
-    }
-    user.passwordConf = hash;
-    next();
-  })
+
 });
 
 
