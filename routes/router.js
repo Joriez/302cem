@@ -6,7 +6,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb+srv://304cem:Blacklotus123@cluster0-gfbbm.azure.mongodb.net/304cem');
 
 var username = "";
 router.use(bodyParser.urlencoded({ extended: false }));
