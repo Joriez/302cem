@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="/static/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/static/favicon.png" rel="icon">
+    <meta name="author" content="Nghia Minh Luong">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Exist</title>
+    <!-- Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700%7CDroid+Serif:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="/static/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/plugins/exist-font/style.css">
+    <!-- CSS Library-->
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/plugins/owl-carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/static/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+    <link rel="stylesheet" href="/static/plugins/slick/slick/slick.css">
+    <link rel="stylesheet" href="/static/plugins/magnific-popup/dist/magnific-popup.css">
+    <link rel="stylesheet" href="/static/plugins/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/static/plugins/jquery-ui/jquery-ui.min.css">
+    <!-- Custom-->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!--[if IE 7]><body class="ie7 lt-ie8 lt-ie9 lt-ie10"><![endif]-->
+<!--[if IE 8]><body class="ie8 lt-ie9 lt-ie10"><![endif]-->
+<!--[if IE 9]><body class="ie9 lt-ie10"><![endif]-->
+
+<body class="ps-loading">
+    <header class="header header--1" data-sticky="true">
+        <nav class="navigation">
+            <div class="ps-container-fluid">
+                <div class="left"><a class="ps-logo" href="index.html"><img src="/static/images/logo.png" alt=""></a></div>
+                <div class="center">
+                    <ul class="menu">
+                        <li class="menu-item-has-children dropdown"><a href="index.html">Home</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">Homepage #1</a></li>
+                                <li><a href="homepage-2.html">Homepage #2</a></li>
+                                <li><a href="homepage-3.html">Homepage #3</a></li>
+                                <li><a href="homepage-4.html">Homepage #4</a></li>
+                                <li><a href="homepage-5.html">Homepage #5</a></li>
+                                <li><a href="homepage-6.html">Homepage #6</a></li>
+                                <li><a href="homepage-7.html">Homepage #7</a></li>
+                                <li><a href="homepage-8.html">Homepage #8</a></li>
+                                <li><a href="homepage-9.html">Homepage #9</a></li>
+                                <li><a href="homepage-10.html">Homepage #10</a></li>
+                                <li><a href="homepage-11.html">Homepage #11</a></li>
+                                <li><a href="homepage-12.html">Homepage #12</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li class="menu-item-has-children dropdown"><a href="#">Blog</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item-has-children dropdown"><a href="blog-grid.html">Blog-grid</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog-grid.html">Blog Grid 1</a></li>
+                                        <li><a href="blog-grid-2.html">Blog Grid 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog-list.html">Blog List</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="menu-toggle"><span></span></div>
+                    <ul class="header__actions">
+                        <li><a class="ps-search-btn" href="#"><i class="exist-search"></i></a></li>
+                        <li class="header__user"><a href="#" aria-haspopup="true" aria-expanded="false" id="shopping-action"><i class="exist-user"></i></a>
+                        
+                        </li>
+                        <li><text style="color: black;" id="username"></text></li>
+                        <li class="header__cart"><a class="ps-shopping" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="shopping-cart"><i class="exist-minicart"></i><span><i>0</i></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="shopping-cart" id="shopping-list">
+                                <li><span class="ps-product--shopping-cart"><a class="ps-product__thumbnail" href="product-detail.html"><img src="/static/images/cart/1.jpg" alt=""></a><span class="ps-product__content"><a class="ps-product__title" href="#">T-shirt blue with slogan</a><span class="ps-product__quantity">1 x <span> $5250.00</span></span>
+                                    </span><a class="ps-product__remove" href="#"><i class="fa fa-trash"></i></a></span>
+                                </li>
+                                <li><span class="ps-product--shopping-cart"><a class="ps-product__thumbnail" href="product-detail.html"><img src="/static/images/cart/2.jpg" alt=""></a><span class="ps-product__content"><a class="ps-product__title" href="#">T-shirt blue with slogan</a><span class="ps-product__quantity">1 x <span> $5250.00</span></span>
+                                    </span><a class="ps-product__remove" href="#"><i class="fa fa-trash"></i></a></span>
+                                </li>
+                                <li class="total">
+                                    <p>Total: <span> $5250.00</span></p><a class="ps-btn" href="#">Go to cart</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="ps-hero bg--cover" data-background="/static/images/hero/blog.jpg">
+        <div class="container">
+            <h2 class="ps-hero__heading">Blog</h2>
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Blog</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <main class="ps-main">
+        <div class="container">
+            <div class="ps-blog">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
+                        <article class="ps-post--primary">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/primary-post.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>
+                            </div>
+                            <div class="ps-post__content">
+                                <div class="ps-post__category"><a href="#">INSPIRATION</a></div>
+                                <h4 class="ps-post__title"><a href="#">Minimalist swimwear by Exist Clothing</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque, nulla et finibus posuere, eros lacus pulvinar mi, ac gravida velit sapien vitae massa.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article>
+                        <article class="ps-post--horizontal">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/no-sidebar-1.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>
+                            </div>
+                            <div class="ps-post__content">
+                                <h4 class="ps-post__title"><a href="#">Minimalist swimwear by Exist Clothing</a></h4>
+                                <p>Pellentesque non malesuada massa. Ut at tortor ipsum. Praesent ultrices pulvinar ultricies.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article>
+                        <article class="ps-post--horizontal">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/no-sidebar-2.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>
+                            </div>
+                            <div class="ps-post__content">
+                                <h4 class="ps-post__title"><a href="#">Minimalist swimwear by Exist Clothing</a></h4>
+                                <p>Pellentesque non malesuada massa. Ut at tortor ipsum. Praesent ultrices pulvinar ultricies.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article>
+                        <article class="ps-post--horizontal">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/no-sidebar-3.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div><a class="ps-post__video" href="#"><i class="exist-play"></i></a>
+                            </div>
+                            <div class="ps-post__content">
+                                <h4 class="ps-post__title"><a href="#">A lovingly restored home in Johannesburg</a></h4>
+                                <p>Pellentesque non malesuada massa. Ut at tortor ipsum. Praesent ultrices pulvinar ultricies.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article>
+                        <article class="ps-post--horizontal">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/no-sidebar-4.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>
+                            </div>
+                            <div class="ps-post__content">
+                                <h4 class="ps-post__title"><a href="#">The Last Time I Was In Paris</a></h4>
+                                <p>Pellentesque non malesuada massa. Ut at tortor ipsum. Praesent ultrices pulvinar ultricies.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article>
+                        <!-- <article class="ps-post--horizontal">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/no-sidebar-5.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>
+                            </div>
+                            <div class="ps-post__content">
+                                <h4 class="ps-post__title"><a href="#">A Compendium of Radness</a></h4>
+                                <p>Pellentesque non malesuada massa. Ut at tortor ipsum. Praesent ultrices pulvinar ultricies.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article> -->
+                        <article class="ps-post--horizontal">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/images/blog/no-sidebar-6.jpg" alt="">
+                                <div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>
+                            </div>
+                            <div class="ps-post__content">
+                                <h4 class="ps-post__title"><a href="#">“Back to school” Summer Collection</a></h4>
+                                <p>Pellentesque non malesuada massa. Ut at tortor ipsum. Praesent ultrices pulvinar ultricies.</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>
+                            </div>
+                        </article>
+                        <div class="ps-blog__footer text-center">
+                            <div class="ps-pagination">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                        <div class="ps-blog__sidebar">
+                            <div class="widget widget_search">
+                                <form class="ps-form--widget-search" action="do_action" method="post">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" placeholder="Search the site..">
+                                        <button><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="widget widget_categories">
+                                <h3 class="widget-title">Categories</h3>
+                                <ul>
+                                    <li><a href="#">Men’s Clothing</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                    <li><a href="#">Tops</a></li>
+                                    <li><a href="#">Dress</a></li>
+                                    <li><a href="#">Denim Jacket</a></li>
+                                    <li><a href="#">Shoes</a></li>
+                                    <li><a href="#">Handbags</a></li>
+                                </ul>
+                            </div>
+                            <div class="widget widget_recent_posted">
+                                <h3 class="widget-title">Top Posts</h3>
+                                <ul>
+                                    <li class="ps-post--sidebar">
+                                        <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="http://via.placeholder.com/100x100" alt=""></div>
+                                        <div class="ps-post__content"><span class="ps-post__posted">17 oct 2017</span><a class="ps-post__title" href="#">Formal Man needs these outfits to be confident</a></div>
+                                    </li>
+                                    <li class="ps-post--sidebar">
+                                        <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="http://via.placeholder.com/100x100" alt=""></div>
+                                        <div class="ps-post__content"><span class="ps-post__posted">17 oct 2017</span><a class="ps-post__title" href="#">Purple Colors of your life</a></div>
+                                    </li>
+                                    <li class="ps-post--sidebar">
+                                        <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="http://via.placeholder.com/100x100" alt=""></div>
+                                        <div class="ps-post__content"><span class="ps-post__posted">17 oct 2017</span><a class="ps-post__title" href="#">Free Yourself after works</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="widget widget_tags">
+                                <h3 class="widget-title">Tags</h3>
+                                <ul>
+                                    <li><a href="#">Accessories</a></li>
+                                    <li><a href="#">T-shirts</a></li>
+                                    <li><a href="#">Top</a></li>
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Dress</a></li>
+                                    <li><a href="#">High-heels</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                    <li><a href="#">T-shirts</a></li>
+                                    <li><a href="#">Top</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="ps-section--instagram">
+        <div class="container">
+            <div class="ps-section__header">
+                <h3>Inspiration From Instagram</h3>
+                <p>@exist.outfits</p>
+            </div>
+            <div class="ps-section__content">
+                <div class="ps-slider--instagram ps-slider--center owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="3" data-owl-item-sm="4" data-owl-item-md="4" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-nav-left="&lt;i class='exist-leftarrow'&gt;&lt;/i&gt;" data-owl-nav-right="&lt;i class='exist-rightarrow'&gt;&lt;/i&gt;"><a href="#"><img src="images/blog/instagram-1.jpg" alt=""></a><a href="#"><img src="images/blog/instagram-2.jpg" alt=""></a><a href="#"><img src="images/blog/instagram-3.jpg" alt=""></a><a href="#"><img src="images/blog/instagram-4.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="ps-footer--1">
+        <div class="ps-container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="ps-footer__copyright">
+                        <p>Copyright &copy; Exists Theme</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
+                    <ul class="ps-footer__nav">
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+                    <ul class="ps-footer__social">
+                        <li><a href=""><i class="fa fa-facebook"></i>facebook</a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i>twitter</a></li>
+                        <li><a href=""><i class="fa fa-instagram"></i>instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="back2top">Go to top<i class="exist-rightarrow"></i></div>
+    <!-- JS Library-->
+    <script type="text/javascript" src="/static/plugins/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/imagesloaded.pkgd.js"></script>
+    <script type="text/javascript" src="/static/plugins/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/slick/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="/static/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/wow.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/gmap3.min.js"></script>
+    <!-- Custom scripts-->
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <script type="text/javascript" src="/static/js/blog.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAckIeA7eVaNv2fKmIKl-udHqlZW2tYxME&amp;region=GB"></script>
+</body>
+
+</html>

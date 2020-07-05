@@ -11,9 +11,3 @@ $(window).on("load", function() {
         $('.nav-tabs .nav-item > .active').parent().next('li').find('a').trigger('click');
     });
 });
-
-
-$("#login").click(function(){
-    console.log("123")
-    window.location.href="/login"
-})

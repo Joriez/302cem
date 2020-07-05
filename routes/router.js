@@ -115,7 +115,9 @@ router.get('/forgetpassword', function (req, res, next) {
 router.get('/memberindex', function (req, res, next) {
     res.sendFile(path.join(__dirname , '../views/memberindex.html'));
 })
-
+router.get('/blog', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/blog.html'));
+})
 
 // GET for logout
 router.get('/logout', function (req, res, next) {
