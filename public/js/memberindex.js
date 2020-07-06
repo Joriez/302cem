@@ -748,12 +748,20 @@ $.ajax({
     type: "GET",
     dataType: "jsonp",
     success: function (data) {
-        console.log(data.username)
-        if (data.username != '') {
-            $("#username").text(data.username.username)
+        console.log(data);
+        if (data.username == '') {
+            console.log("stay");
+            window.location.href = '/';
         } else {
-            $("#fail").text("Email or password incorrect")
-            console.log("login fail")
+            
+            console.log('return');
+            $("#username").text(data.username.username);
         }
     }
+})
+
+$("#logout").click(function(){
+    console.log("logout");
+    window.location.href = '/';
+
 })

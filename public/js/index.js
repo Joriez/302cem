@@ -746,3 +746,22 @@
 $("#login").click(function(){
     window.location.href = "/login"
 })
+
+
+$.ajax({
+    url: "http://localhost:3000/username",
+    type: "GET",
+    dataType: "jsonp",
+    success: function (data) {
+        
+        if (data.username == '') {
+            
+            
+           console.log("not go");
+        } else {
+            console.log(data.username.username);
+            window.location.href = '/memberindex';
+            console.log("go");
+        }
+    }
+})
