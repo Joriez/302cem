@@ -742,7 +742,6 @@
     });
 })(jQuery);
 
-
 $.ajax({
     url: "http://localhost:3000/username",
     type: "GET",

@@ -1,11 +1,29 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var Item = require('../models/item');
+var Items = require('../models/item_model');
 var path = require('path')
 var app = express();
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 app.set('view engine', 'ejs');
+
+var multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null, './public/uploads/');
+  },
+  filename: function(req, file, cb){
+    cb(null, file.originalname);
+  }
+});
+
+const methodOverride = require('method-override');
+router.use(methodOverride('_method'));
+
+var upload = multer({storage: storage})
+
+
 
 var username = "";
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -118,6 +136,39 @@ router.get('/memberindex', function (req, res, next) {
 router.get('/blog', function(req, res, next) {
     res.sendFile(path.join(__dirname , '../views/blog.html'));
 })
+
+router.get('/upload', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/upload.html'));
+})
+
+
+
+router.post('/item', upload.single('ProductImage') ,function (req, res, next){
+    var image = req.file.filename
+    //console.log(req.file)
+    var CreateData = {
+      ProductImage: image,
+      ProductTitle: req.body.ProductTitle,
+      Productdescription: req.body.Productdescription,
+      Username: req.body.Username
+    }
+
+  
+        Item.create(CreateData, function (error, CreateData) {
+          if (error) {
+            console.log(error)
+          } else {
+
+          }
+        });
+  
+  
+      }
+    );
+  
+    router.get('/item', Items.ItemGet);
+  
+  
 
 // GET for logout
 router.get('/logout', function (req, res, next) {
