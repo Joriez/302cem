@@ -141,6 +141,9 @@ router.get('/upload', function(req, res, next) {
     res.sendFile(path.join(__dirname , '../views/upload.html'));
 })
 
+router.get('/dblog', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/dblog.html'));
+})
 
 
 router.post('/item', upload.single('ProductImage') ,function (req, res, next){
