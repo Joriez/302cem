@@ -1679,11 +1679,11 @@ textarea.form-control {
   margin: 0 auto 20px; }
   .form-group--number input {
     height: 48px;
-    border: 1px solid #f3f3f3;
+    border: 0px solid #f3f3f3;
     -webkit-border-radius: 48px;
     -moz-border-radius: 48px;
     -ms-border-radius: 48px;
-    border-radius: 48px;
+    border-radius: 0px;
     text-align: center;
     font-size: 11px;
     font-weight: 700;
@@ -1692,7 +1692,7 @@ textarea.form-control {
     -webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.1); }
+    box-shadow: inset 0 0px 0px 0 rgba(0, 0, 0, 0.1); }
     .form-group--number input:focus {
       border-color: #b19870; }
   .form-group--number span {

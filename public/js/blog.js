@@ -29,9 +29,14 @@ $.ajax({
                 '<div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="/static/uploads/'+ data.item[i].ProductImage + '" alt="">' +
                     '<div class="ps-post__posted"><span class="date">17</span><span class="month">Oct</span></div>' +
                 '</div>' +
+                
                 '<div class="ps-post__content">' +
                     '<h4 class="ps-post__title"><a href="#">'+ data.item[i].ProductTitle + '</a></h4>' +
-                    '<p>' + data.item[i].Productdescription + '</p><a class="ps-btn--underline ps-post__morelink" href="#">Read more</a>'+
+                    '<form action="http://localhost:3000/dblog" method="POST"> ' +
+                    '<input type="hidden" value="' + data.item[i]._id + '"' + ' name = "product_id" >' + 
+                    
+                    '<p>' + data.item[i].Productdescription + '</p><button type="submit" class="ps-btn--underline ps-post__morelink" href="/dblog">Read more</button>'+
+                    '</form>' +
                 '</div>'+
             '</article>'
 

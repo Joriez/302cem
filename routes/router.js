@@ -141,8 +141,20 @@ router.get('/upload', function(req, res, next) {
     res.sendFile(path.join(__dirname , '../views/upload.html'));
 })
 
-router.get('/dblog', function(req, res, next) {
-    res.sendFile(path.join(__dirname , '../views/dblog.html'));
+router.get('/aboutme', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/aboutme.html'));
+})
+
+router.get('/update', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/update.html'));
+})
+
+router.get('/shopwomen', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/shopw.html'));
+})
+
+router.post('/dblog', function(req, res, next) {
+    res.render(path.join(__dirname, '../views/dblog.ejs') ,{item_id: req.body.product_id});
 })
 
 
@@ -170,8 +182,9 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
     );
   
     router.get('/item', Items.ItemGet);
-  
-  
+    router.get('/item/:blog_id', Items.ItemGetOne)
+    router.put('/item', Items.ItemPut);
+    router.delete("/item", Items.ItemDelete)
 
 // GET for logout
 router.get('/logout', function (req, res, next) {
