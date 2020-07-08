@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var Item = require('../models/item');
 var Items = require('../models/item_model');
+var Comments = require('../models/comment_model');
 var path = require('path')
 var app = express();
 var bodyParser = require('body-parser');
@@ -153,6 +154,10 @@ router.get('/shopwomen', function(req, res, next) {
     res.sendFile(path.join(__dirname , '../views/shopw.html'));
 })
 
+router.get('/test', function(req, res, next) {
+    res.sendFile(path.join(__dirname , '../views/test.html'));
+})
+
 router.post('/dblog', function(req, res, next) {
     res.render(path.join(__dirname, '../views/dblog.ejs') ,{item_id: req.body.product_id});
 })
@@ -186,6 +191,9 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
     router.put('/item', Items.ItemPut);
     router.delete("/item", Items.ItemDelete)
 
+    router.post('/comment', Comments.CommentPost)
+    router.get('/comment/:ProductID', Comments.CommentGet)
+
 // GET for logout
 router.get('/logout', function (req, res, next) {
     if (req.session) {
@@ -201,3 +209,5 @@ router.get('/logout', function (req, res, next) {
 });
 
 module.exports = router;
+
+//https://free.currconv.com/api/v7/convert?q=USD_HKD&compact=ultra&apiKey=7a0a61a015e2ff9b28a8
