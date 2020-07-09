@@ -193,6 +193,8 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
 
     router.post('/comment', Comments.CommentPost)
     router.get('/comment/:ProductID', Comments.CommentGet)
+    router.put("/comment/:id", Comments.CommentPut);
+    router.delete("/comment/:id", Comments.CommentDelete)
 
 // GET for logout
 router.get('/logout', function (req, res, next) {
