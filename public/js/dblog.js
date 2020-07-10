@@ -175,6 +175,7 @@ $.ajax({
 			'<div class="panel panel-default">' +
             '<div class="panel-heading">' +
 			'<strong>' + data.item[i].Username + '</strong>' +
+			( check_username == data.item[i].Username ?
 				'<div>' +
 				'<div class="row">' +
 				'<div class="col-sm">' +
@@ -189,7 +190,7 @@ $.ajax({
 				'</form>' +
 				'</div>'  +
 			  '</div>' +
-			 '</div>' +
+			 '</div>': "" ) +
             '</div>' +
             '<div class="panel-body">' +
             data.item[i].Comment +

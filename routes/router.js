@@ -9,6 +9,10 @@ var app = express();
 var bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 
+
+const request = require('request')
+
+
 var multer = require('multer');
 const storage = multer.diskStorage({
   destination: function(req, file, cb){
@@ -20,6 +24,7 @@ const storage = multer.diskStorage({
 });
 
 const methodOverride = require('method-override');
+const { url } = require('inspector');
 router.use(methodOverride('_method'));
 
 var upload = multer({storage: storage})
@@ -185,6 +190,62 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
   
       }
     );
+
+
+    router.get('/USD', function(req , res , next){
+        
+        const url = `https://free.currconv.com/api/v7/convert?compact=ultra&apiKey=7a0a61a015e2ff9b28a8&q=HKD_USD&`
+
+
+    request.get(url, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            const results = JSON.parse(body)
+
+			//console.log(results)
+            return res.send(results)
+        } else {
+            return callback({message: 'Problem with Google API query.', error: error, statusCode: response.statusCode})
+        }
+    })
+
+
+    })
+    router.get('/JPY', function(req , res , next){
+        
+        const url = `https://free.currconv.com/api/v7/convert?compact=ultra&apiKey=7a0a61a015e2ff9b28a8&q=HKD_JPY&`
+
+
+    request.get(url, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            const results = JSON.parse(body)
+
+			//console.log(results)
+            return res.send(results)
+        } else {
+            return callback({message: 'Problem with Google API query.', error: error, statusCode: response.statusCode})
+        }
+    })
+
+
+    })
+    router.get('/SGD', function(req , res , next){
+        
+        const url = `https://free.currconv.com/api/v7/convert?compact=ultra&apiKey=7a0a61a015e2ff9b28a8&q=HKD_SGD&`
+
+
+    request.get(url, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            const results = JSON.parse(body)
+
+			//console.log(results)
+            return res.send(results)
+        } else {
+            return callback({message: 'Problem with Google API query.', error: error, statusCode: response.statusCode})
+        }
+    })
+
+
+    })
   
     router.get('/item', Items.ItemGet);
     router.get('/item/:blog_id', Items.ItemGetOne)
@@ -194,7 +255,7 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
     router.post('/comment', Comments.CommentPost)
     router.get('/comment/:ProductID', Comments.CommentGet)
     router.put("/comment/:id", Comments.CommentPut);
-    router.delete("/comment/:id", Comments.CommentDelete)
+    router.delete("/comment/:id", Comments.CommentDelete);
 
 // GET for logout
 router.get('/logout', function (req, res, next) {

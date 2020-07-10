@@ -47,14 +47,16 @@ exports.CommentPut = function (req, res) {
       }
 
   
-  exports.CommentDelete = function (req, res) {
+      exports.CommentDelete = function (req, res) {
+
 
         Comment.findByIdAndDelete(req.body._method, (err, result) => {
           if (err) return res.send(err)
-
+          res.jsonp({
+            status: "success",
+            result
+        })
         })
     
     
       }
-
-  

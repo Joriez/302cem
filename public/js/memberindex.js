@@ -764,3 +764,32 @@ $("#logout").click(function(){
     window.location.href = '/';
 
 })
+
+$.ajax({
+    url: "http://localhost:3000/USD",
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+        console.log(data["HKD_USD"]);
+        $("#usd").text("USD " + data["HKD_USD"])
+    }
+})
+$.ajax({
+    url: "http://localhost:3000/JPY",
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+        console.log(data["HKD_JPY"]);
+        $("#jpy").text("JPY " + data["HKD_JPY"])
+    }
+})
+$.ajax({
+    url: "http://localhost:3000/SGD",
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+        console.log(data["HKD_SGD"]);
+        $("#sgd").text("SGD " + data["HKD_SGD"])
+
+    }
+})
