@@ -29,30 +29,32 @@ exports.CommentGet = function (req, res, next) {
     })
 }
 
-
 exports.CommentPut = function (req, res) {
-    Comment.findByIdAndUpdate(req.body.selected_id, {
-        $set: {
+
+        Comment.findByIdAndUpdate(req.body.selected_id, {
+          $set: {
             Comment: req.body.change_comment
-        }
-    }, (err, result) => {
-        if (err) return console.log(err)
-        res.jsonp({
+          }
+        }, (err, result) => {
+          if (err) return console.log(err)
+          res.jsonp({
             status: "success",
             result
         })
-    })
-}
-
-
-exports.CommentDelete = function (req, res) {
-    Comment.findByIdAndDelete(req.body._method, (err, result) => {
-        if (err) return res.send(err)
-        res.jsonp({
-            status: "success",
-            result
         })
-    })
-}
+    
+    
+      }
 
+  
+  exports.CommentDelete = function (req, res) {
 
+        Comment.findByIdAndDelete(req.body._method, (err, result) => {
+          if (err) return res.send(err)
+
+        })
+    
+    
+      }
+
+  

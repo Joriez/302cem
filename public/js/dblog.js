@@ -22,7 +22,8 @@ $.ajax({
     success: function (data) {
         //console.log(check_username)
         //console.log(data)
-        $("#title").text(data.item.ProductTitle)
+        setTimeout(function (){
+            $("#title").text(data.item.ProductTitle)
         $("#description").text(data.item.Productdescription)
         $("#created_by").text("Created by: " + data.item.Username)
 
@@ -42,6 +43,7 @@ $.ajax({
             '<i class="exist-zoom"></i>' +
             '</a></div>'
         )
+        })
     }
 })
 //$("#delete").hide();
@@ -94,33 +96,135 @@ $("#postComment").click(function () {
     });
 });
 
+// $.ajax({
+//     url: "http://localhost:3000/comment/" + id,
+//     type: "GET",
+//     dataType: "jsonp",
+//     success: function (data) {
+//         console.log(data)
+//         for(var i = 0; i < data.item.length; i++){
+//             $("#comment_area").append(
+             
+//                 '<div class="panel panel-default">' +
+//                 '<div class="panel-heading">' +
+//                 '<strong>' + data.item[i].Username + '</strong>' +
+//                 ( check_username  == data.item[i].Username ?
+//                     '<div>' +
+//                     '<div class="row">' +
+//                     '<div class="col-sm">' +
+//                     '</div>' +
+//                     '<div class="col-sm">' +
+//                     '</div>' +
+//                     '<div class="col-sm">' +
+//                     '<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="post" action="http://localhost:3000/comment/{{id}}?_method=DELETE">' +
+//                     '<input type="hidden" name="_method" value="' + data.item[i]._id + '">' + 
+//                     '<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button>' +
+//                     '<button type="submit" onClick="location.reload()" class="btn btn-outline-danger" id="Delete_Comment' + i + '"' + '>' + '<img src="../static/css/images/cross.png"></img>'  + '</button>' +
+//                     '</form>' +
+//                     '</div>'  +
+//                   '</div>' +
+//                  '</div>': "" ) +
+//                 '</div>' +
+//                 '<div class="panel-body">' +
+//                 data.item[i].Comment +
+//                 '</div>'+
+//                 '</div>' +
+    
+    
+    
+    
+//                 '<div class="modal fade" id="ModalCenter'+ i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">' +
+//                 '<div class="modal-dialog modal-dialog-centered" role="document">' +
+//                 '<div class="modal-content">' +
+//                 '<div class="modal-header">' +
+//                 '<h5 class="modal-title" id="exampleModalCenterTitle">Modify Your Choosing Commnet</h5>' +
+//                 '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+//                 '<span aria-hidden="true">&times;</span>' +
+//                 '</button>' +
+//                 '</div>' +
+//                 '<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="POST" action="http://localhost:3000/comment/{{id}}?_method=PUT">' +
+//                 '<div class="modal-body">' +
+//                 '<input type="hidden" name="selected_id" value=' + data.item[i]._id + '>' +
+//                 '<input type="text" class="form-control" name="change_comment" required>'+
+//                 '</div>' +
+//                 '<div class="modal-footer">' +
+//                 '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+//                 '<button type="submit" class="btn btn-primary">Save changes</button>' +
+//                 '</div>' +
+//                 '</form>'+
+//                 '</div>' +
+//                 '</div>'
+    
+//             )
+//         }
+
+//     }
+// })
+
+
 $.ajax({
-    url: "http://localhost:3000/comment/" + id,
-    type: "GET",
-    dataType: "jsonp",
-    success: function (data) {
-        console.log(data)
-        for(var i = 0; i < data.item.length; i++){
-            $("#comment_area").append(
-                '<form' +
-                '<div class="ps-product__content">'+
-                '<div class="ps-container-fluid">'+
-                    '<ul class="tab-list" role="tablist">'+
-                     
-                        '<li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab">'+ data.item[i].Username +'</a></li>'+
-                    '</ul>'+
-                    '<div class="tab-content">'+
-                        '<div class="tab-pane active" role="tabpanel">'+
-                            '<div class="ps-content">'+
-                                
-                                '<p>'+ data.item[i].Comment +'</p>'+
-                            '</div>'+
-                        '</div>' +
-                        '</form>' +
-                        '<br>' + '<br>' + '<br>'
-            )
-        }
+	url: "http://localhost:3000/comment/" + id,
+	type: "GET",
+	dataType: "jsonp",
+	success: function (data) {
+		var check = $("#CheckPermission").val()
+		for (i = 0; i < data.item.length; i++) {
+		console.log(data.item[i])
+		$("#comment_area").append(
+			// data[i].Comment + '<br>'
+			'<div class="panel panel-default">' +
+            '<div class="panel-heading">' +
+			'<strong>' + data.item[i].Username + '</strong>' +
+				'<div>' +
+				'<div class="row">' +
+				'<div class="col-sm">' +
+				'</div>' +
+				'<div class="col-sm">' +
+				'</div>' +
+				'<div class="col-sm">' +
+				'<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="post" action="http://localhost:3000/comment/{{id}}?_method=DELETE">' +
+				'<input type="hidden" name="_method" value="' + data.item[i]._id + '">' + 
+				'<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button>' +
+				'<button type="submit" onClick="location.reload()" class="btn btn-outline-danger" id="Delete_Comment' + i + '"' + '>' + '<img src="../static/css/images/cross.png"></img>'  + '</button>' +
+				'</form>' +
+				'</div>'  +
+			  '</div>' +
+			 '</div>' +
+            '</div>' +
+            '<div class="panel-body">' +
+            data.item[i].Comment +
+            '</div>'+
+			'</div>' +
 
-    }
+
+
+
+			'<div class="modal fade" id="ModalCenter'+ i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">' +
+			'<div class="modal-dialog modal-dialog-centered" role="document">' +
+			'<div class="modal-content">' +
+			'<div class="modal-header">' +
+			'<h5 class="modal-title" id="exampleModalCenterTitle">Modify Your Choosing Commnet</h5>' +
+			'<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+			'<span aria-hidden="true">&times;</span>' +
+			'</button>' +
+			'</div>' +
+			'<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="POST" action="http://localhost:3000/comment/{{id}}?_method=PUT">' +
+			'<div class="modal-body">' +
+			'<input type="hidden" name="selected_id" value=' + data.item[i]._id + '>' +
+			'<input type="text" class="form-control" name="change_comment" required>'+
+			'</div>' +
+			'<div class="modal-footer">' +
+			'<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+			'<button type="submit" class="btn btn-primary">Save changes</button>' +
+			'</div>' +
+			'</form>'+
+			'</div>' +
+			'</div>'
+
+
+		)
+
+		}
+		
+	}
 })
-

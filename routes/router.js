@@ -27,7 +27,7 @@ var upload = multer({storage: storage})
 
 
 var username = "";
-router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.urlencoded({ extended: true }));
 // GET route for homepage
 router.get('/', function (req, res, next) {
     return res.sendFile(path.join(__dirname + '/views/index.html'));
