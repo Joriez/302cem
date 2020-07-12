@@ -30,7 +30,7 @@ exports.CommentGet = function (req, res, next) {
 }
 
 exports.CommentPut = function (req, res) {
-
+        console.log(req.body.selected_id)
         Comment.findByIdAndUpdate(req.body.selected_id, {
           $set: {
             Comment: req.body.change_comment
@@ -48,9 +48,8 @@ exports.CommentPut = function (req, res) {
 
   
       exports.CommentDelete = function (req, res) {
-
-
-        Comment.findByIdAndDelete(req.body._method, (err, result) => {
+        console.log(req.body.method)
+        Comment.findByIdAndDelete(req.body.method, (err, result) => {
           if (err) return res.send(err)
           res.jsonp({
             status: "success",
