@@ -174,25 +174,23 @@ $.ajax({
 			// data[i].Comment + '<br>'
 			'<div class="panel panel-default">' +
             '<div class="panel-heading">' +
+            '<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="post" action="http://localhost:3000/comment/{{id}}?_method=DELETE">' +
+            '<input type="hidden" name="method" value="' + data.item[i]._id + '">' + 
 			'<strong>' + data.item[i].Username + '</strong>' +
 			( check_username == data.item[i].Username ?
 				'<div>' +
 				'<div class="row">' +
 				'<div class="col-sm">' +
-				'</div>' +
-				'<div class="col-sm">' +
-				'</div>' +
-				'<div class="col-sm">' +
-				'<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="post" action="http://localhost:3000/comment/{{id}}?_method=DELETE">' +
-				'<input type="hidden" name="method" value="' + data.item[i]._id + '">' + 
+
+
 				'<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button>' +
-				'<button type="submit" onClick="location.reload()" class="btn btn-outline-danger" id="Delete_Comment' + i + '"' + '>' + '<img src="../static/css/images/cross.png"></img>'  + '</button>' +
+				'<button type="submit" onClick="location.reload()" class="btn btn-outline-danger" id="Delete_Comment' + i + '">Delete</button>' +
 				'</form>' +
 				'</div>'  +
 			  '</div>' +
 			 '</div>': "" ) +
             '</div>' +
-            '<div class="panel-body">' +
+            '<div style="color: black;" class="panel-body">' +
             data.item[i].Comment +
             '</div>'+
 			'</div>' +

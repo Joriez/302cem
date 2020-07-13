@@ -192,9 +192,9 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
     );
 
 
-    router.get('/USD', function(req , res , next){
+    router.get('/HKD', function(req , res , next){
         
-        const url = `https://free.currconv.com/api/v7/convert?compact=ultra&apiKey=7a0a61a015e2ff9b28a8&q=HKD_USD&`
+        const url = `http://api.currencylayer.com/live?access_key=727407f82d166d61d4e4cdbd615b2bc7&format=1&currencies=HKD`
 
 
     request.get(url, function(error, response, body) {
@@ -204,7 +204,7 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
 			//console.log(results)
             return res.send(results)
         } else {
-            return callback({message: 'Problem with Google API query.', error: error, statusCode: response.statusCode})
+            return null
         }
     })
 
@@ -212,7 +212,7 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
     })
     router.get('/JPY', function(req , res , next){
         
-        const url = `https://free.currconv.com/api/v7/convert?compact=ultra&apiKey=7a0a61a015e2ff9b28a8&q=HKD_JPY&`
+        const url = `http://api.currencylayer.com/live?access_key=727407f82d166d61d4e4cdbd615b2bc7&format=1&currencies=JPY`
 
 
     request.get(url, function(error, response, body) {
@@ -222,7 +222,7 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
 			//console.log(results)
             return res.send(results)
         } else {
-            return callback({message: 'Problem with Google API query.', error: error, statusCode: response.statusCode})
+            return null
         }
     })
 
@@ -230,7 +230,7 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
     })
     router.get('/SGD', function(req , res , next){
         
-        const url = `https://free.currconv.com/api/v7/convert?compact=ultra&apiKey=7a0a61a015e2ff9b28a8&q=HKD_SGD&`
+        const url = `http://api.currencylayer.com/live?access_key=727407f82d166d61d4e4cdbd615b2bc7&format=1&currencies=SGD`
 
 
     request.get(url, function(error, response, body) {
@@ -240,7 +240,7 @@ router.post('/item', upload.single('ProductImage') ,function (req, res, next){
 			//console.log(results)
             return res.send(results)
         } else {
-            return callback({message: 'Problem with Google API query.', error: error, statusCode: response.statusCode})
+            return null
         }
     })
 

@@ -766,12 +766,13 @@ $("#logout").click(function(){
 })
 
 $.ajax({
-    url: "http://localhost:3000/USD",
+    url: "http://localhost:3000/HKD",
     type: "GET",
     dataType: "json",
     success: function (data) {
-        console.log(data["HKD_USD"]);
-        $("#usd").text("USD " + data["HKD_USD"])
+        console.log(data.quotes.USDHKD);
+        
+      $("#hkd").text("HKD " + data.quotes.USDHKD)
     }
 })
 $.ajax({
@@ -779,8 +780,8 @@ $.ajax({
     type: "GET",
     dataType: "json",
     success: function (data) {
-        console.log(data["HKD_JPY"]);
-        $("#jpy").text("JPY " + data["HKD_JPY"])
+        console.log(data);
+        $("#jpy").text("JPY " + data.quotes.USDJPY)
     }
 })
 $.ajax({
@@ -788,8 +789,8 @@ $.ajax({
     type: "GET",
     dataType: "json",
     success: function (data) {
-        console.log(data["HKD_SGD"]);
-        $("#sgd").text("SGD " + data["HKD_SGD"])
+        console.log(data);
+        $("#sgd").text("SGD " + data.quotes.USDSGD)
 
     }
 })
