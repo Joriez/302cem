@@ -118,7 +118,7 @@ $("#postComment").click(function () {
 //                     '<div class="col-sm">' +
 //                     '<form onsubmit="setTimeout(function () { window.location.reload(); }, 10)" method="post" action="http://localhost:3000/comment/{{id}}?_method=DELETE">' +
 //                     '<input type="hidden" name="_method" value="' + data.item[i]._id + '">' + 
-//                     '<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button>' +
+//                     '<button type="button" class="button2" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button>' +
 //                     '<button type="submit" onClick="location.reload()" class="btn btn-outline-danger" id="Delete_Comment' + i + '"' + '>' + '<img src="../static/css/images/cross.png"></img>'  + '</button>' +
 //                     '</form>' +
 //                     '</div>'  +
@@ -183,8 +183,8 @@ $.ajax({
 				'<div class="col-sm">' +
 
 
-				'<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button>' +
-				'<button type="submit" onClick="location.reload()" class="btn btn-outline-danger" id="Delete_Comment' + i + '">Delete</button>' +
+                '<button type="button" class="button2" data-toggle="modal" data-target="#ModalCenter' + i + '">Edit</button> ' +
+				'<button type="submit" onClick="location.reload()" class="button2" id="Delete_Comment' + i + '">Delete</button>' +
 				'</form>' +
 				'</div>'  +
 			  '</div>' +

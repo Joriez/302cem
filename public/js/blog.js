@@ -35,7 +35,7 @@ $.ajax({
                     '<form action="http://localhost:3000/dblog" method="POST"> ' +
                     '<input type="hidden" value="' + data.item[i]._id + '"' + ' name = "product_id" >' + 
                     
-                    '<p>' + data.item[i].Productdescription + '</p><button type="submit" class="ps-btn--underline ps-post__morelink" href="/dblog">Read more</button>'+
+                    '<p>' + data.item[i].Productdescription + '</p><button type="submit" class="btn btn-outline-info" href="/dblog">Read more</button>'+
                     '</form>' +
                 '</div>'+
             '</article>'
